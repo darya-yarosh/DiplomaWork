@@ -1,0 +1,37 @@
+.entityListHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3ch;
+    padding-left: 3ch;
+    margin-top: 1ch;
+}
+
+.entityListTitle {
+    margin: 0ch;
+    text-transform: uppercase;
+}
+
+.entityList {
+    padding: 1ch;
+}
+
+.entityPreviewNav {
+    display: grid;
+    justify-content: end;
+    grid-auto-flow: column;
+}
+
+.entityPreviewNav button {
+    margin: 0ch;
+}
+
+.entity {
+    margin-bottom: 1.5ch;
+    margin-top: 1.5ch;
+}
+
+.systemMessage {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+}

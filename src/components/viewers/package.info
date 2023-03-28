@@ -1,0 +1,4 @@
+/**
+ * The content of this module are responsible for viewer components that displaying main information about entities.
+ */
+package src.components.viewers;

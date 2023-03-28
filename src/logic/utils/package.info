@@ -1,0 +1,4 @@
+/**
+ * The content of this module are responsible for tools that interact with entities, check the data for validity and lead to the appropriate format.
+ */
+package src.logic.utils;

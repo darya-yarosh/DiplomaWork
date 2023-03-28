@@ -1,0 +1,4 @@
+/**
+ * The content of this module are responsible for form components that displaying information about received entity.
+ */
+package src.components.forms;

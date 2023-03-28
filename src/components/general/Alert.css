@@ -1,0 +1,8 @@
+.alert {
+    width: 100%;
+    padding-left: 0.5ch;
+    padding-right: 0.5ch;
+    text-align: end;
+    font-weight: bold;
+    color: red;
+}

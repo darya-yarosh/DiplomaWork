@@ -1,0 +1,4 @@
+/**
+ * The content of this module are responsible for displaying information about entities.
+ */
+package src.components;

@@ -1,0 +1,4 @@
+/**
+ * The content of this module are responsible for interactions with entities directly from the storage.
+ */
+package src.logic.storage;
