@@ -1,0 +1,331 @@
+{
+    "users": [
+        {
+            "login": "dashayarosh",
+            "role": "user",
+            "password": "dashayarosh",
+            "id": "M1ks5uRUX3RAhdBnetLY"
+        },
+        {
+            "login": "user2",
+            "id": "OUIdUCjXednLB2JY8pKt",
+            "password": "user2",
+            "role": "admin"
+        },
+        {
+            "id": "a2xYmYU2NRzzq0IaysC4",
+            "login": "darya",
+            "role": "user",
+            "password": "darya"
+        },
+        {
+            "login": "admin",
+            "password": "admin",
+            "role": "superadmin",
+            "id": "admin"
+        },
+        {
+            "id": "sI3aMZh3Rmm45ivQBn3J",
+            "login": "312119",
+            "role": "user",
+            "password": "312119"
+        },
+        {
+            "password": "user",
+            "login": "user1",
+            "id": "user",
+            "role": "admin"
+        }
+    ],
+    "activities": [
+        {
+            "name": "Защита дипломных работ",
+            "participantList": [
+                {
+                    "id": "Rt0w1du2uyve16aDI687",
+                    "role": "Дипломник"
+                },
+                {
+                    "id": "K7s916vs2LrKJfZlAIX2",
+                    "role": "Дипломник"
+                },
+                {
+                    "id": "tZJS1TIJA1l5hp9zgHTS",
+                    "role": "Дипломник"
+                },
+                {
+                    "id": "U47NvAK0v8TnrhZTyiG9",
+                    "role": "Комиссия"
+                }
+            ],
+            "projectList": [
+                {
+                    "id": "w52z6PiJalHSKuXLPJLI"
+                },
+                {
+                    "id": "eSk3iYTZlhNoIjvUezqr"
+                }
+            ],
+            "id": "FEAxaURGCzc8gif02O20",
+            "dataEnd": "2023-05-13",
+            "status": "Отменено",
+            "location": "Минск, БНТУ, 1 корпус",
+            "description": "Защита дипломных работ",
+            "timeEnd": "00:00",
+            "timeStart": "00:00",
+            "dataStart": "2023-05-13"
+        },
+        {
+            "location": "БНТУ, Минск, корпус 11, 225 аудитория",
+            "status": "Завершено",
+            "description": "Научная конференция по студенческим проектам",
+            "id": "JTFWbNpjB8stVH4kaagm",
+            "dataEnd": "2022-10-19",
+            "timeStart": "13:00",
+            "dataStart": "2022-10-19",
+            "projectList": [
+                {
+                    "id": "9hAguSoc653eQt2TmrMm"
+                },
+                {
+                    "id": "eSk3iYTZlhNoIjvUezqr"
+                }
+            ],
+            "name": "Научная конференция",
+            "participantList": [
+                {
+                    "id": "57aUtPAetxMloHzXKehx",
+                    "description": "Организатор"
+                },
+                {
+                    "description": "Участник",
+                    "id": "K7s916vs2LrKJfZlAIX2"
+                },
+                {
+                    "id": "tZJS1TIJA1l5hp9zgHTS",
+                    "description": "Участник"
+                },
+                {
+                    "id": "Rt0w1du2uyve16aDI687",
+                    "description": "Участник"
+                }
+            ],
+            "timeEnd": "15:00"
+        },
+        {
+            "name": "Первокурсник ФИТР",
+            "description": "Конкурсная программа с выступлениями от каждой группы первого курса.",
+            "projectList": [
+                {
+                    "id": ""
+                }
+            ],
+            "id": "OyAafgcOl88gL3uPVUax",
+            "status": "Завершено",
+            "participantList": [
+                {
+                    "id": "57aUtPAetxMloHzXKehx",
+                    "description": "Организатор"
+                }
+            ],
+            "dataEnd": "2022-10-19",
+            "location": "Минск, БНТУ, 11 корпус",
+            "dataStart": "2022-10-19",
+            "timeStart": "18:00",
+            "timeEnd": "21:30"
+        },
+        {
+            "location": "Минск, БНТУ, 1 корпус",
+            "id": "UN2RgbcgKmra42QeKkqe",
+            "dataStart": "2023-04-28",
+            "participantList": [
+                {
+                    "id": "57aUtPAetxMloHzXKehx",
+                    "description": "Организатор"
+                },
+                {
+                    "id": "tZJS1TIJA1l5hp9zgHTS",
+                    "description": "Помощник"
+                },
+                {
+                    "description": "Кандидат",
+                    "id": "Rt0w1du2uyve16aDI687"
+                },
+                {
+                    "description": "Кандидат",
+                    "id": "8P2euFYLNai5QUvAYFBk"
+                }
+            ],
+            "dataEnd": "2023-04-28",
+            "timeStart": "17:00",
+            "name": "Мистер БНТУ",
+            "timeEnd": "20:00",
+            "status": "Отменено",
+            "description": "Весеннее мероприятие для мужской половины студентов университета"
+        }
+    ],
+    "projects": [
+        {
+            "id": "9hAguSoc653eQt2TmrMm",
+            "participantList": [
+                {
+                    "id": "U47NvAK0v8TnrhZTyiG9",
+                    "role": "asd"
+                },
+                {
+                    "role": "asd",
+                    "id": "Rt0w1du2uyve16aDI687"
+                },
+                {
+                    "role": "ds",
+                    "id": "8P2euFYLNai5QUvAYFBk"
+                },
+                {
+                    "role": "",
+                    "id": "177b4e91-7eff-44a4-bab5-69440dc43960"
+                }
+            ],
+            "description": "Описание проекта 4.",
+            "name": "Проект №4",
+            "status": "Запланирован"
+        },
+        {
+            "name": "Проект №5",
+            "id": "ce79dbe2-dc47-4af7-815b-a6d874a40124",
+            "participantList": [
+                {
+                    "id": "177b4e91-7eff-44a4-bab5-69440dc43960",
+                    "role": "Студент"
+                }
+            ],
+            "description": "",
+            "status": "Отменён"
+        },
+        {
+            "participantList": [
+                {
+                    "role": "d",
+                    "id": "tZJS1TIJA1l5hp9zgHTS"
+                },
+                {
+                    "role": "d",
+                    "id": "K7s916vs2LrKJfZlAIX2"
+                },
+                {
+                    "id": "iq3BCZHC12s6R7qRe7xB",
+                    "role": "d"
+                }
+            ],
+            "id": "eSk3iYTZlhNoIjvUezqr",
+            "description": "Описание проекта 3.",
+            "name": "Проект №3",
+            "status": "Запланирован"
+        },
+        {
+            "participantList": [
+                {
+                    "description": "Руководитель",
+                    "id": "57aUtPAetxMloHzXKehx"
+                },
+                {
+                    "id": "K7s916vs2LrKJfZlAIX2",
+                    "description": "Разработчик"
+                }
+            ],
+            "description": "Описание проекта 1 крайне длинное на мой взгляд, но в тоже время не очень.",
+            "status": "В процессе",
+            "name": "Проект №1",
+            "id": "w52z6PiJalHSKuXLPJLI"
+        }
+    ],
+    "members": [
+        {
+            "id": "177b4e91-7eff-44a4-bab5-69440dc43960",
+            "firstName": "Максим",
+            "lastName": "Яртонов",
+            "middleName": "Вячеславович",
+            "status": "Активен",
+            "position": "Студент",
+            "mobileNumber": "",
+            "mail": "",
+            "address": ""
+        },
+        {
+            "id": "57aUtPAetxMloHzXKehx",
+            "firstName": "Александр",
+            "lastName": "Пилипенко",
+            "middleName": "Сергеевич",
+            "status": "Активен",
+            "position": "Преподаватель",
+            "mobileNumber": "+375-29-273-05-03",
+            "mail": "",
+            "address": ""
+        },
+        {
+            "id": "8P2euFYLNai5QUvAYFBk",
+            "firstName": "Лян",
+            "lastName": "Цзын",
+            "middleName": "",
+            "status": "Не активен",
+            "position": "Иное лицо",
+            "mobileNumber": "",
+            "mail": "",
+            "address": "Минск, Сурганова 37/2, 218 комната"
+        },
+        {
+            "id": "K7s916vs2LrKJfZlAIX2",
+            "firstName": "Дарья",
+            "lastName": "Ярош",
+            "middleName": "Сергеевна",
+            "status": "Активен",
+            "position": "Студент",
+            "mobileNumber": "+375-29-233-74-73",
+            "mail": "dashayarosh9@gmail.com",
+            "address": "Минск, ул.Лесная, 169/39"
+        },
+        {
+            "id": "Rt0w1du2uyve16aDI687",
+            "firstName": "Кирилл",
+            "lastName": "Петров",
+            "middleName": "Михайлович",
+            "status": "Не активен",
+            "position": "Студент",
+            "mobileNumber": "",
+            "mail": "",
+            "address": ""
+        },
+        {
+            "id": "U47NvAK0v8TnrhZTyiG9",
+            "firstName": "Мария",
+            "lastName": "Котаева",
+            "middleName": "Сергеевна",
+            "status": "Активен",
+            "position": "Студент",
+            "mobileNumber": "",
+            "mail": "",
+            "address": ""
+        },
+        {
+            "id": "d760faef-83a7-4291-99c4-628d1123c2af",
+            "firstName": "Олег",
+            "lastName": "Витунов",
+            "middleName": "Максимович",
+            "status": "He активен",
+            "position": "Преподаватель",
+            "mobileNumber": "",
+            "mail": "",
+            "address": ""
+        },
+        {
+            "id": "tZJS1TIJA1l5hp9zgHTS",
+            "firstName": "Анастасия",
+            "lastName": "Коледа",
+            "middleName": "Дмитриевна",
+            "status": "Активен",
+            "position": "Студент",
+            "mobileNumber": "",
+            "mail": "",
+            "address": ""
+        }
+    ]
+}
