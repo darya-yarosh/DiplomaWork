@@ -1,17 +1,33 @@
-#root {
-    height: 100%;
-    width: 100%;
-    background-color: #404453;
+.palette {
+    --primary-bg: #f8f8f8;
+    --secondary-bg: #ebebeb;
+    --card-bg: #ffffff;
+    --primary-btn-bg:#ffffff;
+    --primary-txt-color: #707070;
+    --primary-btn-bg-hover: #707070;
+    --primary-txt-color-hover: #ffffff;
+    --dangerous-btn-bg:#008a5e;
+    --dangerous-txt-color: #ffffff;
+    --dangerous-btn-bg-hover:#016646;
+    --dangerous-txt-color-hover: #ffffff;
+    --main-txt-color: #1a1a1a;
+    --main-txt-color-hover: #008a5e;
+}
+
+.app-wrapper {
+    /* margin: 0px 32px; */
+    margin: 0px auto;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-size: calc(2vmin);
     color: white;
     background-color: #282c34;
+    margin: 0;
+    padding: 0;
+    background-color: #404453;
+    background-color: #adadad;
+    background-color: #cdcdcd52;
 }
 
 .App {
@@ -20,16 +36,9 @@ body {
     background-color: #282c34;
 }
 
-.App-header {
-    padding: 2ch;
-}
-
-.App-header-nav {
-    height: 100%;
-    padding: 1ch;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-around;
+.btn {
+    padding: 18px 32px;
+    margin: 16px 0px;
 }
 
 .App-main {
@@ -48,48 +57,31 @@ body {
     border-color: #979797;
 }
 
-.partition {
-    text-align: center;
-    border-style: inset;
-    border-width: 1ch;
-    border-color: #979797;
-    padding: 1.5ch;
-    height: fit-content;
-    background-color: #00000052;
-    box-shadow: 0px 0px 10px 5px rgb(27, 30, 35);
-    margin-left: 0.2ch;
-    margin-right: 0.2ch;
-}
-
-.partition :hover {
-    text-shadow: 0px 0px 10px #979797;
-    font-weight: 500;
-}
-
-.partition :active {
-    color: #979797;
-}
-
-.partition p {
-    font-size: 3ch;
-}
-
-p {
-    color: white;
-}
-
 button {
     background-color: #626262;
+    background-color: #f7f7f7;
     color: white;
+    color: black;
     border: 2px solid;
     font-size: inherit;
+    font-weight: bold;
     padding: 0.5ch;
-    border-color: #979797;
+    /*border-color: #979797;*/
+    border-color: #f7f7f7;
+    border-radius: 8px;
 }
 
 button:hover {
     text-shadow: 0px 0px 10px #979797;
-    color: #1b1e23;
+    /*color: #1b1e23;*/
+    /*color: #4e4e4e;*/
+    color: white;
+    background-color: darkgray;
+    border-color: darkgray;
+    box-shadow: 0px 0px 8px 0px black;
+    color: white;
+    background-color: #2e2e2e;
+    border-color: #2e2e2e;
 }
 
 button:active {
@@ -97,9 +89,38 @@ button:active {
     background-color: #1b1e23;
 }
 
-@media screen and (max-width: 1200px) {
+.invisible {
+    display: none;
+}
+
+input, textarea, select, option {
+    padding: 8px;
+    border: 4px solid white;
+    border-radius: 8px;
+    /* height: 100%; */
+    /* max-width: 65%; */
+    background: lightgray;
+}
+
+.btn-dangerous {
+    color: var(--color3);
+    border: white;
+    background-color: white;;
+}
+
+.btn-primary {
+    
+}
+
+.btn-success {
+    color:white;
+    background-color: #008a5e;
+    border-color: #008a5e;
+}
+
+/* @media screen and (max-width: 1200px) {
     #root {
         padding-left: 1ch;
         padding-right: 1ch;
     }
-}
+} */

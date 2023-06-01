@@ -1,0 +1,106 @@
+.partition {
+    margin: 4px 32px 16px 32px;
+    min-height: 600px;
+}
+.partition-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.partition-title {
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color3);
+}
+.partition-tools {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.partition-header button {
+    margin: 16px 0px;
+}
+.partition-elements-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+.entityListHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3ch;
+    padding-left: 3ch;
+    margin-top: 1ch;
+}
+
+.card {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px;
+    border: 8px solid;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border-color: #fcfcfca6;
+    /* margin: auto; */
+}
+
+.card span {
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+    color: black;
+    gap: 48px;
+}
+
+.card span:last-child {
+    justify-content: space-between;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #4d4d4d;
+    border-color: #4d4d4d;
+}
+form.card span{
+    gap: 0;
+}
+form.card span:not(:last-child) :first-child{
+    width:35%;
+}
+form.card span:not(:last-child) :last-child{
+    width: 65%;
+}
+.field-header {
+    font-weight: bold;
+    width:30%;
+    padding: 12px 0px;
+}
+.field-name {
+    min-height: 85px;
+}
+.field-description {
+    min-height: 200px;
+}
+.field-value {
+
+}
+
+.entityPreviewNav button {
+    margin: 0ch;
+}
+
+.entity {
+    margin-bottom: 1.5ch;
+    margin-top: 1.5ch;
+}
+
+.systemMessage {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+}

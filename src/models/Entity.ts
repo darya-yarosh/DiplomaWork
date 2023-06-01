@@ -1,59 +1,51 @@
-import EMPTY_INDEX from "logic/utils/EmptyIndex";
-import Employee from "models/Employee";
+import Member from "models/Member";
 import Project from "models/Project";
-import Task from "models/Task";
+import Activity from "models/Activity";
 
-/**
- * A common type for all entity models.
- */
-type Entity = Employee | Task | Project;
+type Entity = Member | Project | Activity;
 
 export default Entity;
 
-/**
- * String values of entity type names.
- * 
- * @param employee employee-type of entity.
- * @param task task-type of entity.
- * @param project project-type of entity.
- */
-export const enum ENTITY_TYPES {
-    employee = "Employee",
-    task = "Task",
-    project = "Project"
+export interface EntityParticipant {
+    id: string;
+    role: string;
 }
 
-/**
- * Templates of empty entities.
- * 
- * @param employee empty employee entity.
- * @param task empty task entity.
- * @param project empty project entity.
-*/
-export const DEFAULT_EMPTY_ENTITY = {
-    employee: {
-        id: EMPTY_INDEX,
-        type: ENTITY_TYPES.employee,
-        lastName: "",
-        firstName: "",
-        middleName: "",
-        position: ""
-    } as Employee,
-    task: {
-        id: EMPTY_INDEX,
-        type: ENTITY_TYPES.task,
-        status: "",
-        name: "",
-        projectId: EMPTY_INDEX,
-        executionTime: "",
-        employeeId: EMPTY_INDEX,
-        startDate: "",
-        finishDate: ""
-    } as Task,
-    project: {
-        id: EMPTY_INDEX,
-        type: ENTITY_TYPES.project,
-        name: "",
-        description: ""
-    } as Project
+export interface EntityParticipantView {
+    id: string;
+    fullName: string;
+    role: string;
+}
+
+export interface EntityProject {
+    id: string;
+}
+export interface EntityProjectView {
+    id: string;
+    name: string;
+}
+
+export enum PARAMETERS_ENTITY {
+    // общий
+    status = "Статус",
+    // member
+    fullName = "ФИО",
+    lastName = "Фамилия",
+    firstName = "Имя",
+    middleName = "Отчество",
+    position = "Должность",
+    address = "Адрес",
+    mail = "Почта",
+    mobileNumber = "Мобильный телефон",
+    // project + activity
+    name = "Название",
+    description = "Описание",
+    participantList = "Список участников",
+    // activity
+    location = "Место",
+    dataStart = "Дата начала",
+    timeStart = "Время начала",
+    dataEnd = "Дата окончания",
+    timeEnd = "Время окончания",
+    projectList = "Список проектов",
 }

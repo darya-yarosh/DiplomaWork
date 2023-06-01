@@ -1,0 +1,63 @@
+.admin-page-header {
+    background-color: #00000052;
+    margin: 0px -32px;
+}
+.admin-page-wrapper {
+    margin: 0px auto;
+    margin-bottom: 32px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; */
+    /* justify-content: center; */
+    align-items: center;
+}
+.admin-page-wrapper h1 {
+    color: var(--color3);
+}
+
+.user-roles-table {
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: white;
+    color: black;
+}
+.user-roles-table th, .user-roles-table td {
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    padding: 0px 12px;
+    border-radius: 4px;
+}
+
+.role-changer {
+    display: flex;
+    align-items: center;
+}
+
+.admin-label, .user-label {
+    background-color: aliceblue;
+    color: black;
+    padding: 4px 8px;
+    border: 4px solid aliceblue;
+}
+
+.admin-label{
+    border-radius: 8px 0px 0px 8px;
+}
+
+.user-label{
+    border-radius: 0px 8px 8px 0px;
+}
+
+.admin-label:hover, .admin-label.checked-role:hover, .user-label:hover, .user-label.checked-role:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.admin-label.checked-role,.user-label.checked-role {
+    background-color:#008a5e;
+    color: white;
+    border-color: #008a5e;
+}

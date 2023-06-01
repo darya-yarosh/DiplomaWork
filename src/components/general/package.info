@@ -1,4 +1,0 @@
-/**
- * The content of this module are responsible for additional components that display sections of separate information for forms and previews.
- */
-package src.components.general;

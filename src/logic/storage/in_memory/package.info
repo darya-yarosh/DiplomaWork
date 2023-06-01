@@ -1,4 +1,0 @@
-/**
- * The content of this module are responsible for interactions with entities directly from the in-memory storage.
- */
-package src.logic.storage.in_memory;

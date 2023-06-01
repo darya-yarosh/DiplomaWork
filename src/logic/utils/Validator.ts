@@ -1,45 +1,33 @@
-import { DatePatterns } from "components/general/DateInput";
+import { ActivityStatus } from "models/Activity";
+import { MemberPosition, MemberStatus } from "models/Member";
+import { ProjectStatus } from "models/Project";
 
-/**
- * Patterns for the text.
- *
- * @param text the pattern for the text.
- * @param letters the pattern of letters.
-*/
+const DatePatterns = {
+    datePlaceholder: "ГГГГ-ММ-ДД",
+    dateLength: 10,
+    inputTemplate: "(?:19|20)\[0-9\]{2}-(?:(?:0\[1-9\]|1\[0-2\])/(?:0\[1-9\]|1\[0-9\]|2\[0-9\])|(?:(?!02)(?:0\[1-9\]|1\[0-2\])/(?:30))|(?:(?:0\[13578\]|1\[02\])-31))",
+    numsInYear: 4,
+    numsInMonth: 2,
+    numsInDay: 2,
+    numOfValues: 3,
+}
+
 const TextPatterns = {
     text: /^[0-9a-zA-Zа-яА-Я]/,
     letters: /[A-Za-zА-Яа-я]/,
+    //tel: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+    tel: /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g,
+    mobileNumber: /^\(?[+]*([0-9]{3})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/,
+    mail: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+    time: /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/,
 }
 
-/**
- * Validator of values.
-*/
+export const Placeholders = {
+    mobileNumber: "+375-29-111-11-11",
+    mail: "mail@example.com"
+}
+
 export default class Validator {
-    /**
-     * Getting of text after validating.
-     *
-     * @param newValue new value for validation.
-     * @param oldValue old valid value.
-     * 
-     * @return valid text.
-    */
-    getValidText(newValue: string, oldValue: string) {
-        let validText = oldValue;
-
-        if (this.isTextValid(newValue)) {
-            validText = newValue;
-        }
-        return validText;
-    }
-
-    /**
-     * Getting of number after validating.
-     *
-     * @param newValue new value for validation.
-     * @param oldValue old valid value.
-     * 
-     * @return valid number.
-    */
     getValidNumber(newValue: string, oldValue: string) {
         let validNumber = oldValue;
 
@@ -49,13 +37,75 @@ export default class Validator {
         return validNumber;
     }
 
-    /**
-     * Checking text is valid.
-     *
-     * @param newValue new value for validation
-     * 
-     * @return true if text is valid. false if text is invalid.
-    */
+    isMobileNumberValid(value: string) {
+        return TextPatterns.mobileNumber.test(value);
+    }
+
+    isMailValid(value: string) {
+        return TextPatterns.mail.test(value);
+    }
+
+    isValidProjectStatus(status: string) {
+        const isCorrectStatus = status === ProjectStatus.canceled
+            || status === ProjectStatus.completed
+            || status === ProjectStatus.inProgress
+            || status === ProjectStatus.postponed
+            || status === ProjectStatus.scheduled;
+
+        return isCorrectStatus;
+    }
+
+    formatStrToProjectStatus(status: string) {
+        if (status === ProjectStatus.canceled) return ProjectStatus.canceled;
+        if (status === ProjectStatus.completed) return ProjectStatus.completed;
+        if (status === ProjectStatus.inProgress) return ProjectStatus.inProgress;
+        if (status === ProjectStatus.postponed) return ProjectStatus.postponed;
+        if (status === ProjectStatus.scheduled) return ProjectStatus.scheduled;
+        return ProjectStatus.canceled;
+    }
+
+    isValidMemberStatus(status: string) {
+        const isCorrectStatus = status === MemberStatus.active
+            || status === MemberStatus.inactive;
+
+        return isCorrectStatus;
+    }
+    isValidPosition(position: string) {
+        const isCorrectPosition = position === MemberPosition.student
+            || position === MemberPosition.teacher
+            || position === MemberPosition.other;
+
+        return isCorrectPosition;
+    }
+    formatStrToMemberStatus(status: string) {
+        if (status === MemberStatus.active) return MemberStatus.active;
+        if (status === MemberStatus.inactive) return MemberStatus.inactive;
+        return MemberStatus.inactive;
+    }
+    formatStrToPosition(position: string) {
+        if (position === MemberPosition.student) return MemberPosition.student;
+        if (position === MemberPosition.teacher) return MemberPosition.teacher;
+        if (position === MemberPosition.other) return MemberPosition.other;
+        return MemberPosition.other;
+    }
+    isValidActivityStatus(status: string) {
+        const isCorrectStatus = status === ActivityStatus.canceled
+            || status === ActivityStatus.completed
+            || status === ActivityStatus.inProgress
+            || status === ActivityStatus.postponed
+            || status === ActivityStatus.scheduled;
+
+        return isCorrectStatus;
+    }
+    formatStrToActivityStatus(status: string) {
+        if (status === ActivityStatus.canceled) return ActivityStatus.canceled;
+        if (status === ActivityStatus.completed) return ActivityStatus.completed;
+        if (status === ActivityStatus.inProgress) return ActivityStatus.inProgress;
+        if (status === ActivityStatus.postponed) return ActivityStatus.postponed;
+        if (status === ActivityStatus.scheduled) return ActivityStatus.scheduled;
+        return ActivityStatus.canceled;
+    }
+
     isTextValid(newValue: string) {
         let isDataValid = false;
 
@@ -65,13 +115,15 @@ export default class Validator {
         return isDataValid;
     }
 
-    /**
-     * Checking number is valid.
-     *
-     * @param newValue new value for validation
-     * 
-     * @return true if number is valid. false if number is invalid.
-    */
+    getValidText(newValue: string, oldValue: string) {
+        let validText = oldValue;
+
+        if (this.isTextValid(newValue)) {
+            validText = newValue;
+        }
+        return validText;
+    }
+
     isNumberValid(newValue: string) {
         let isDataValid = false;
 
@@ -82,19 +134,13 @@ export default class Validator {
         return isDataValid;
     }
 
-    /**
-     * Checking text is string after validation.
-     *
-     * @param text text for validation
-     * 
-     * @return true if text is string. false if text is not string.
-    */
     isString(text: string) {
         let isString = true;
 
         const splittedText = text.split('');
         splittedText.forEach((symbol) => {
             const isNotFitPatternOfLetters = !symbol.match(TextPatterns.letters);
+            
             if (isNotFitPatternOfLetters) {
                 isString = false;
             }
@@ -102,25 +148,10 @@ export default class Validator {
         return isString;
     }
 
-    /**
-     * Checking text is empty.
-     *
-     * @param text text for validation.
-     * 
-     * @return true if text is empty. false if text is not empty.
-    */
     isEmpty(text: string) {
         return text !== null && text.trim() !== undefined && text.trim().length <= 0;
     }
 
-    /**
-     * Comparing text with a number.
-     *
-     * @param text text for validation.
-     * @param number number for validation.
-     * 
-     * @return true if text and number the same. false if text and number not the same.
-    */
     isTextIsNum(text: string, number: number) {
         let isTextIsNum = false;
 
@@ -137,13 +168,14 @@ export default class Validator {
         return isTextIsNum;
     }
 
-    /**
-     * Checking new date is valid.
-     *
-     * @param newDate converted and checked string date.
-     * 
-     * @return true if date is valid. false if date is invalid.
-    */
+    isValidTime(time: string) {
+        let isValid = false;
+        if (time !== null) {
+            isValid = TextPatterns.time.test(time);
+        }
+        return isValid;
+    }
+
     isValidDate(newDate: string) {
         let isValid = false;
         if (newDate !== null) {
@@ -154,13 +186,6 @@ export default class Validator {
         return isValid;
     }
 
-    /**
-     * Converting date to text type with YYYY-MM-DD pattern.
-     *
-     * @param date date value for conferting.
-     * 
-     * @return value of converted text to date.
-    */
     convertDateToText(date: Date) {
         // A string 0 is added to comply with the 'MM' pattern if the month is less than 10.
         let newDateMonth = (date.getMonth() + 1).toString();
@@ -182,13 +207,17 @@ export default class Validator {
         return textDate;
     }
 
-    /**
-     * Converting text of date to date type.
-     *
-     * @param date string date value for conferting.
-     * 
-     * @return value of converted text to date.
-    */
+    formatDate(date: Date) {
+        const year = date.getFullYear()
+        let month: number | string = date.getMonth() + 1
+        let day: number | string = date.getDate()
+
+        if (month < 10) month = '0' + month
+        if (day < 10) day = '0' + day
+        const formattedDate = `${year}-${month}-${day}`
+        return formattedDate;
+    }
+
     convertTextToDate(date: string) {
         let newDate = new Date();
 
@@ -221,14 +250,6 @@ export default class Validator {
         return newDate;
     }
 
-    /**
-     * Checking whether an array consists of numbers. 
-     *
-     * @param numbers array for validation.
-     * @param arrayLength length of array.
-     * 
-     * @return true if array consists of numbers. false if array not consists of numbers.
-    */
     isArrayIsNum(numbers: string[], arrayLength: number) {
         let ifArrayIsNum = true;
 
@@ -251,24 +272,10 @@ export default class Validator {
         return ifArrayIsNum;
     }
 
-    /**
-     * Checking the year for validity.
-     *
-     * @param year year for validation.
-     * 
-     * @return true if year is valid. false if year is invalid.
-    */
     isValidYear(year: string) {
         return (this.isDateMatchPatternLength(year, DatePatterns.numsInYear));
     }
 
-    /**
-     * Checking the month for validity.
-     *
-     * @param month month for validation.
-     * 
-     * @return true if month is valid. false if month is invalid.
-    */
     isValidMonth(month: string) {
         let isValidMonth = false;
 
@@ -282,13 +289,6 @@ export default class Validator {
         return isValidMonth;
     }
 
-    /**
-     * Checking the day for validity.
-     *
-     * @param day day for validation.
-     * 
-     * @return true if day is valid. false if day is invalid.
-    */
     isValidDay(day: string) {
         let isValidDay = false;
         if (this.isDateMatchPatternLength(day, DatePatterns.numsInDay)) {
@@ -301,14 +301,6 @@ export default class Validator {
         return isValidDay;
     }
 
-    /**
-     * Checking whether the date matches the pattern length.
-     * 
-     * @param dateNumber date number.
-     * @param validLength pattern of valid length.
-     * 
-     * @return true if date number is valid. false if date number is invalid.
-     */
     isDateMatchPatternLength(dateNumber: string, validLength: number) {
         let isValidLength = false;
 
@@ -319,13 +311,6 @@ export default class Validator {
         return isValidLength;
     }
 
-    /**
-     * Getting the existing date number.
-     * 
-     * @param dateNumber number of date.
-     * 
-     * @return valid number of date.
-     */
     getExistingDateNumber(dateNumber: string) {
         let existingDateNumber = dateNumber;
 
@@ -335,26 +320,10 @@ export default class Validator {
         return existingDateNumber;
     }
 
-    /**
-     * Checking whether the number is in the right range. 
-     * 
-     * @param number number for checking.
-     * @param startRange start of range.
-     * @param endRange end of range.
-     * 
-     * @return true if number in range. false if number is not in range.
-     */
     isNumberInRange(number: number, startRange: number, endRange: number) {
         return (number >= startRange) && (number <= endRange);
     }
 
-    /**
-    * Getting object with trimmed parameters.
-    * 
-    * @param object object for trim.
-    * 
-    * @return converted object.
-    */
     getTrimmedObject(object: Object) {
         let trimmedObject = { ...object };
 

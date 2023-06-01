@@ -1,0 +1,30 @@
+.autorization-header {
+    background-color: #00000052;
+    margin: 0px -32px;
+}
+
+.autorization-wrapper {
+    margin: 16px 30%;
+}
+
+.autorization-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    padding: 16px;
+    gap: 8px;
+    color: var(--color3);
+}
+.autorization-form-btn-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0px;
+    gap: 16px;
+}
+.autorization-form input {
+    max-width: 100%;
+    background-color: white;
+}
+.autorization-form-btn-nav .btn {
+    margin: 0px;
+}

@@ -1,3 +1,4 @@
 {
-    "useInMemory": false
+    "useInMemory": true,
+    "accessRights": "read"
 }

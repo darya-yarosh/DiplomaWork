@@ -1,4 +1,0 @@
-/**
- * The content of this module is responsible for tools of interacting with entities and storage data.
- */
-package src.logic;
